@@ -35,3 +35,36 @@ export function select(element)
 {
     return document.getElementById(element.id)
 }
+
+function make(element)
+{
+    return document.createElement(element)
+}
+
+export class Projects 
+{
+    constructor(_name,_url,_img)
+    {
+        this.id = _name,
+        this.url = _url,
+        this.img = _img
+    }
+    desc(_desc)
+    {
+        this.desc = _desc;
+    }
+}
+
+export function addProject(project) 
+{
+    let figure = make('figure')
+    let img = make('img')
+    img.src = project.img
+    let caption = make('figcaption')
+    caption.innerHTML= project.desc = "" ? "" : project.desc
+    let link = make('a')
+    link.setAttribute('href',project.url)
+    link(img,link)
+    link(link,figure)
+    link(caption,figure)
+}

@@ -1,25 +1,45 @@
 * {
   margin: 0;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  padding: 0.5em 0.3em;
+  border-radius: 1em;
 }
 
 #main {
-  height: 100vh;
   width: 100vw;
-  background-color: black;
   display: flex;
+  flex-direction: column;
 }
 #main #title {
   color: antiquewhite;
   text-align: center;
-  margin: 0 auto;
-  width: 10vw;
+  width: 100vw;
+  font-size: 4em;
+  height: 99vh;
+  line-height: 4em;
+  margin: 4vh 0;
 }
 #main #title span {
   color: goldenrod;
   text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
+  -webkit-animation: colorful 3s linear infinite;
+          animation: colorful 3s linear infinite;
 }
 #main #title #name {
-  font-size: 1.4em;
+  font-size: 1.8em;
 }
 #main nav {
   position: absolute;
@@ -70,7 +90,45 @@
   font-size: 1.2em;
   right: 0;
   cursor: pointer;
+  transition: 0.3s linear;
+}
+#main nav ul li:hover, #main nav ul a:hover, #main nav ul a:active {
+  color: green;
+  background-color: goldenrod;
 }
 #main nav .show-menu {
   display: none;
+}
+#main h2 {
+  color: goldenrod;
+  display: block;
+  font-size: 5em;
+  margin: 0 auto;
+}
+#main #projects {
+  width: 100vw;
+}
+
+/** animation section **/
+@-webkit-keyframes colorful {
+  0% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
+  }
+  50% {
+    text-shadow: 0.8em 0em 0.8em red, -0.8em 0em 0.8em yellow;
+  }
+  100% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
+  }
+}
+@keyframes colorful {
+  0% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
+  }
+  50% {
+    text-shadow: 0.8em 0em 0.8em red, -0.8em 0em 0.8em yellow;
+  }
+  100% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
+  }
 }/*# sourceMappingURL=main.css.map */
