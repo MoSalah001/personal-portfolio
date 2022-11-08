@@ -41,7 +41,7 @@ function make(element)
     return document.createElement(element)
 }
 
-export class Projects 
+export class Project 
 {
     constructor(_name,_url,_img)
     {
@@ -55,16 +55,19 @@ export class Projects
     }
 }
 
-export function addProject(project) 
+export function addProject(project,app) 
 {
     let figure = make('figure')
     let img = make('img')
-    img.src = project.img
+    img.src = `./public/img/${project.img}`
     let caption = make('figcaption')
     caption.innerHTML= project.desc = "" ? "" : project.desc
     let link = make('a')
-    link.setAttribute('href',project.url)
-    link(img,link)
-    link(link,figure)
-    link(caption,figure)
+    link.setAttribute('href',`https://${project.url}`)
+    link.setAttribute('target',`_blank`)
+    link.appendChild(img)
+    figure.appendChild(link)
+    figure.appendChild(caption)
+    let parent = document.getElementById(app.id)
+    parent.appendChild(figure)
 }

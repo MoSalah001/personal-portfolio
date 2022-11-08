@@ -1,4 +1,4 @@
-import Item , {linkItem as link , addEvent as listner , select } from "./elements.mjs";
+import Item , {linkItem as link , addEvent as listner , select , Project , addProject } from "./elements.mjs";
 const app = document.getElementById('main')
 
 const title = new Item('h1',"title",`Hello,\nI<span>'</span>m \n <br /> <span id=\"name\">Mohamed</span>`)
@@ -23,6 +23,8 @@ link(projectLi,navUl)
 link(contactLi,navUl)
 
 listner(burger,'click',burgerMenu)
+listner(projectLi,'click',burgerMenu)
+listner(contactLi,'click',burgerMenu)
 
 function burgerMenu(e) 
 {
@@ -32,7 +34,6 @@ function burgerMenu(e)
     select(projectLi).classList.toggle('show-menu')
     select(contactLi).classList.toggle('show-menu')
 }
-
 
 /* end of nav menu items */
 
@@ -44,4 +45,18 @@ link(projectTitle , app)
 
 link(projects,app)
 
-const projetcs =[];
+const twitter = new Project('Twitter-Clone','twitterclone.cyclic.app','twitter-clone.png')
+const clock = new Project('Digital-Clock','mosalah001.github.io/Digital-Clock/','Digital-Clock.png')
+const tictac = new Project('Tic-Tac-Toe','mosalah001.github.io/Tic-Tac-Toe/','tictac.png')
+const landing = new Project('Landing-Page','mosalah001.github.io/landing-page/','Land.png')
+
+twitter.desc('Twitter Mock-up project')
+clock.desc("Digital Clock Project")
+tictac.desc("Tic Tac Toe Game")
+landing.desc('Landing Page Project')
+
+addProject(twitter,projects)
+addProject(clock,projects)
+addProject(tictac,projects)
+addProject(landing,projects)
+addProject(twitter,projects)
