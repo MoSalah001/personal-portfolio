@@ -6,4 +6,4 @@
 - used SCSS to style the site.
 - projects thumbnails was made in photoshop by me.
 
-# Preview Link : [here](https://mosalah001.netlify.app/){:target="_blank"}
+# Preview Link : [here](https://mosalah001.netlify.app/)
