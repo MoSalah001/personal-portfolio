@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "aguafina";
+  src: url(AguafinaScript-Regular.ttf);
+}
 * {
   margin: 0;
   background-color: black;
@@ -41,13 +45,16 @@ a:link, a:visited {
           animation: colorful 3s linear infinite;
 }
 #main #title #name {
-  font-size: 1.8em;
+  font-family: "aguafina";
+  font-size: 2.4em;
 }
 #main nav {
-  position: absolute;
+  background-color: transparent;
+  position: fixed;
   right: 0.8em;
   top: 0.8em;
   color: white;
+  z-index: 1;
 }
 #main nav div {
   background-color: goldenrod;
@@ -80,6 +87,7 @@ a:link, a:visited {
   transition: 0.2s linear;
 }
 #main nav ul {
+  background-color: transparent;
   position: relative;
   list-style: none;
 }
@@ -108,13 +116,16 @@ a:link, a:visited {
   margin: 0 auto;
 }
 #main #projects {
-  margin: 1em 0;
-  width: 99.4vw;
+  position: relative;
+  left: 6em;
+  margin: 1em 0em;
+  width: 95vw;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   place-content: flex-start;
   flex-wrap: wrap;
-  row-gap: 2em;
+  row-gap: 2.5em;
   -moz-column-gap: 6em;
        column-gap: 6em;
 }
@@ -142,7 +153,135 @@ a:link, a:visited {
 #main #projects figure:hover {
   border: 0.5em solid greenyellow;
 }
+#main #contact {
+  background-color: transparent;
+  position: fixed;
+  top: 22vh;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 8em;
+  margin: 0em 0em;
+  padding: 0;
+  cursor: pointer;
+}
+#main #contact a {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  padding: 0;
+  margin: 0;
+}
+#main #contact a img {
+  background-color: transparent;
+  border-radius: 0.8em;
+  max-width: 50%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.2s linear;
+  margin: 0.4em 0.2em;
+}
+#main #contact a #freelancer, #main #contact a #linkedin {
+  background-color: white;
+}
+#main #contact img:hover {
+  border: 0.2em goldenrod solid;
+}
 
+@media only screen and (max-width: 600px) {
+  #contact {
+    display: none;
+  }
+  #main #title {
+    font-size: 2.2em;
+  }
+  #main #title #name {
+    position: relative;
+    top: 15vh;
+    font-size: 2.2em;
+    left: -0.15em;
+    -webkit-animation: "colorful-mob" 2s linear infinite;
+            animation: "colorful-mob" 2s linear infinite;
+  }
+  #main nav {
+    background-color: transparent;
+    width: 10vw;
+  }
+  #main nav div {
+    width: 9vw;
+  }
+  #main nav #burger .bar1-dark {
+    rotate: 135deg;
+    transform: translate(1.5em, 0.5em);
+  }
+  #main nav #burger .bar2-dark {
+    display: none;
+  }
+  #main nav #burger .bar3-dark {
+    rotate: 225deg;
+    transform: translate(1em, -0.85em);
+  }
+  #main nav ul {
+    right: 6em;
+    background-color: transparent;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  #main nav ul li {
+    margin: 2em 0em;
+    font-size: 0.8em;
+  }
+  #main h2 {
+    font-size: 4em;
+    position: relative;
+    left: 0.22em;
+  }
+  #main #projects {
+    left: 4.5em;
+    width: 81%;
+    max-width: 85%;
+    flex-direction: column;
+  }
+  #main #projects figure {
+    width: 65vw;
+    max-width: 80vw;
+  }
+  #main #contact {
+    position: fixed;
+    top: 1em;
+    width: 75vw;
+    max-width: 80vw;
+    flex-direction: row;
+    place-content: center;
+    margin: 0em;
+    background-color: rgba(218, 165, 32, 0.3);
+    border-radius: 2em;
+    height: 5vh;
+  }
+  #main #contact a {
+    margin: 0 0.1em;
+    overflow: hidden;
+    max-width: 10vw;
+    place-content: center;
+    width: 10vw;
+  }
+  #main #contact a img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    -o-object-fit: fill;
+       object-fit: fill;
+    margin: 0;
+  }
+  #main .show-contact {
+    display: flex;
+  }
+}
 /** animation section **/
 @-webkit-keyframes colorful {
   0% {
@@ -164,5 +303,27 @@ a:link, a:visited {
   }
   100% {
     text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
+  }
+}
+@-webkit-keyframes colorful-mob {
+  0% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.5em red;
+  }
+  50% {
+    text-shadow: 0.8em 0em 0.8em red, -0.8em 0em 0.7em yellow;
+  }
+  100% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.5em red;
+  }
+}
+@keyframes colorful-mob {
+  0% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.5em red;
+  }
+  50% {
+    text-shadow: 0.8em 0em 0.8em red, -0.8em 0em 0.7em yellow;
+  }
+  100% {
+    text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.5em red;
   }
 }/*# sourceMappingURL=main.css.map */

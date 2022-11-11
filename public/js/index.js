@@ -1,4 +1,4 @@
-import Item , {linkItem as link , addEvent as listner , select , Project , addProject } from "./elements.mjs";
+import Item , {linkItem as link , addEvent as listner , select , Project , addProject , contactList} from "./elements.mjs";
 const app = document.getElementById('main')
 
 const title = new Item('h1',"title",`Hello,\nI<span>'</span>m \n <br /> <span id=\"name\">Mohamed</span>`)
@@ -11,7 +11,7 @@ const bar1 = new Item('div','bar1')
 const bar2 = new Item('div','bar2')
 const bar3 = new Item('div','bar3')
 const projectLi = new Item('li','project',"<a href=#projects>Projects</a>",'show-menu')
-const contactLi = new Item('li','contact',"<a href=#contact>Contact Me</a>",'show-menu')
+const aboutLi = new Item('li','about-me',"<a href=#about>About Me</a>",'show-menu')
 
 link(nav,app)
 link(burger,nav)
@@ -20,11 +20,11 @@ link(bar2,burger)
 link(bar3,burger)
 link(navUl,nav)
 link(projectLi,navUl)
-link(contactLi,navUl)
+link(aboutLi,navUl)
 
 listner(burger,'click',burgerMenu)
 listner(projectLi,'click',burgerMenu)
-listner(contactLi,'click',burgerMenu)
+listner(aboutLi,'click',burgerMenu)
 
 function burgerMenu(e) 
 {
@@ -32,7 +32,8 @@ function burgerMenu(e)
     select(bar2).classList.toggle(`bar2-dark`)
     select(bar3).classList.toggle(`bar3-dark`)
     select(projectLi).classList.toggle('show-menu')
-    select(contactLi).classList.toggle('show-menu')
+    select(aboutLi).classList.toggle('show-menu')
+    select(contact).classList.toggle('show-contact')
 }
 
 /* end of nav menu items */
@@ -65,3 +66,44 @@ addProject(tictac,projects)
 addProject(landing,projects)
 addProject(weather,projects)
 addProject(portfolio,projects)
+
+/*** End of projects ***/
+
+/*** contact ***/
+
+const contact = new Item('div', 'contact')
+link(contact,app)
+const contactLinks = 
+[
+    {
+        name : 'git',
+        url :'https://github.com/MoSalah001'
+    },
+
+    {
+        name : 'fb',
+        url :'https://fb.com/MoSalah001'
+    },
+
+    {
+        name : 'twitter',
+        url :'https://twitter.com/MoSalah001'
+    },
+
+    {
+        name :'linkedin',
+        url :'https://www.linkedin.com/in/mosalah001/'
+    },
+
+    {
+        name : 'freelancer',
+        url : 'https://www.freelancer.com/u/mosalah01'
+    },
+
+    {
+        name : 'gmail',
+        url : 'mailto:mhmdsalah707@gmail.com'
+    }
+];
+
+contactList(contactLinks);

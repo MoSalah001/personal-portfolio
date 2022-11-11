@@ -71,3 +71,19 @@ export function addProject(project,app)
     let parent = document.getElementById(app.id)
     parent.appendChild(figure)
 }
+
+export function contactList(arr)
+{
+    let parent = document.getElementById('contact')
+    arr.forEach(element => 
+        {
+           let link = document.createElement('a');
+           let logo = document.createElement('img');
+           link.setAttribute('href',element.url);
+           link.setAttribute('target','_blank');
+           logo.setAttribute('src',`./public/css/icons/${element.name}.png`);
+           logo.setAttribute('id',element.name);
+           link.appendChild(logo);
+           parent.appendChild(link);
+        })
+}

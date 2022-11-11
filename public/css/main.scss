@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'aguafina';
+    src: url(AguafinaScript-Regular.ttf);
+}
 
 * // general base style
 {
@@ -51,16 +54,19 @@ a:link , a:visited
 
         & #name 
             {
-                font-size: 1.8em;
+                font-family: 'aguafina';
+                font-size: 2.4em;
             }
     }
     
     & nav // nav menu style
     {
-        position: absolute;
+        background-color: transparent;
+        position: fixed;
         right:0.8em;
         top: 0.8em;
         color: white;
+        z-index: 1;
 
         & div 
         {
@@ -73,6 +79,7 @@ a:link , a:visited
 
         & #burger
         {
+            
             display: inline;
 
             & .bar1-dark
@@ -107,6 +114,7 @@ a:link , a:visited
 
         & ul 
         {
+            background-color: transparent;
             position: relative;
             list-style: none;
 
@@ -148,13 +156,16 @@ a:link , a:visited
 
     & #projects
     {
-        margin: 1em 0;
-        width: 99.4vw;
+        position: relative;
+        left: 6em;
+        margin: 1em 0em;
+        width: 95vw;
+        max-width: 100%;
         display: flex;
         flex-direction: row;
         place-content: flex-start;
         flex-wrap: wrap;
-        row-gap: 2em;
+        row-gap: 2.5em;
         column-gap: 6em;
 
 
@@ -190,7 +201,176 @@ a:link , a:visited
             border: 0.5em solid greenyellow;
         }
     }
+
+    & #contact 
+    {
+        background-color: transparent;
+        position: fixed;
+        top: 22vh;
+        width: fit-content;
+        max-width: 8em;
+        margin: 0em 0em;
+        padding: 0;
+        cursor: pointer;
+
+        & a 
+        {
+            display: flex;
+            flex-direction: column;
+            max-width: 70%;
+            max-height: fit-content;
+            padding: 0;
+            margin: 0;
+
+            & img 
+            {
+                background-color: transparent;
+                border-radius: 0.8em;
+                max-width: 50%;
+                max-height: 100%;
+                object-fit:cover;
+                transition: 0.2s linear;
+                margin: 0.4em 0.2em;
+            }
+            & #freelancer , #linkedin
+            {
+                background-color: white;
+            }
+        }
+
+        & img:hover
+        {
+                border : 0.2em goldenrod solid;
+        }
+
+    }
 }
+
+@media only screen and (max-width:600px)
+{
+    #contact 
+    {
+        display: none;
+    }
+    #main 
+    {
+
+        & #title 
+        {
+            font-size: 2.2em;
+
+            & #name 
+            {
+                position: relative;
+                top: 15vh;
+                font-size: 2.2em;
+                left:-0.15em;
+                animation: 'colorful-mob' 2s linear infinite;
+            }
+        }
+
+        & nav 
+        {
+            background-color: transparent;
+            width: 10vw;
+
+            & div 
+            {
+                width: 9vw;
+            }
+            & #burger
+            {
+                & .bar1-dark
+                {
+                    rotate: 135deg;
+                    transform: translate(1.5em,0.5em);
+                }
+                
+                & .bar2-dark
+                {
+                    display: none;
+                }
+                & .bar3-dark
+                {
+                    rotate: 225deg;
+                    transform: translate(1em , -0.85em);
+                }
+            }
+
+            & ul
+            {
+                right : 6em;
+                background-color: transparent;
+                width: max-content;
+
+                & li 
+                {
+                    margin: 2em 0em;
+                    font-size: 0.8em;
+                }
+            }
+        }
+
+        & h2 
+        {
+            font-size: 4em;
+            position: relative;
+            left: 0.22em
+        }
+
+        & #projects
+        {
+            left: 4.5em;
+            width: 81%;
+            max-width: 85%;
+            flex-direction: column;
+
+            & figure 
+            {
+                width: 65vw;
+                max-width: 80vw;
+            }
+        }
+
+        & #contact
+        {
+            position: fixed;
+            top: 1em;
+            width: 75vw;
+            max-width: 80vw;
+            flex-direction: row;
+            place-content: center;
+            margin: 0em;
+            background-color: rgba(218, 165, 32,0.3);
+            border-radius: 2em;
+            height: 5vh;
+
+            & a 
+            {
+                margin: 0 0.1em;
+                overflow: hidden;
+                max-width: 10vw;
+                place-content: center;
+                width: 10vw;
+
+                & img 
+                {
+                    width: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: fill;
+                    margin: 0;
+                }
+            }
+        }
+        & .show-contact
+        {
+            display: flex;
+        }
+    }
+
+}
+
 
 /** animation section **/
 
@@ -207,5 +387,20 @@ a:link , a:visited
     100%
     {
         text-shadow: 0.8em 0em 0.8em yellow , -0.8em 0em 0.8em red;
+    }
+}
+@keyframes colorful-mob 
+{
+    0% 
+    {
+        text-shadow: 0.8em 0em 0.8em yellow , -0.8em 0em 0.5em red;
+    }
+    50% 
+    {
+        text-shadow: 0.8em 0em 0.8em red , -0.8em 0em 0.7em yellow;
+    }
+    100%
+    {
+        text-shadow: 0.8em 0em 0.8em yellow , -0.8em 0em 0.5em red;
     }
 }
