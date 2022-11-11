@@ -18,7 +18,6 @@ a:link, a:visited {
   text-decoration: none;
   background-color: transparent;
   color: white;
-  padding: 0.3em 0.5em;
   border-radius: 1em;
   font-size: 1.2em;
   margin: 0em 0.4em;
@@ -134,6 +133,8 @@ a:link, a:visited {
   border: 0.3em solid goldenrod;
   border-radius: 0.5em;
   transition: 0.2s linear;
+  display: flex;
+  place-content: center;
 }
 #main #projects figure a {
   max-width: 100%;
@@ -154,31 +155,34 @@ a:link, a:visited {
   border: 0.5em solid greenyellow;
 }
 #main #contact {
-  background-color: transparent;
+  background-color: rgba(218, 165, 32, 0.3);
   position: fixed;
   top: 22vh;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  left: 0em;
+  width: 4vw;
   max-width: 8em;
   margin: 0em 0em;
   padding: 0;
   cursor: pointer;
+  border-bottom-right-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  transition: 0.5s linear;
 }
 #main #contact a {
   display: flex;
   flex-direction: column;
-  max-width: 70%;
+  max-width: 100%;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
   padding: 0;
   margin: 0;
+  place-items: center;
 }
 #main #contact a img {
   background-color: transparent;
   border-radius: 0.8em;
-  max-width: 50%;
+  max-width: 80%;
   max-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -189,7 +193,10 @@ a:link, a:visited {
   background-color: white;
 }
 #main #contact img:hover {
-  border: 0.2em goldenrod solid;
+  border: 0.2em red solid;
+}
+#main #contact:hover {
+  background-color: rgba(218, 165, 32, 0.7);
 }
 
 @media only screen and (max-width: 600px) {
