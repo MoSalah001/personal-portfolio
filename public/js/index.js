@@ -52,6 +52,7 @@ const tictac = new Project('Tic-Tac-Toe','mosalah001.github.io/Tic-Tac-Toe/','ti
 const landing = new Project('Landing-Page','mosalah001.github.io/landing-page/','Land.png')
 const weather = new Project('Weather-Project','openweather-app-demo.herokuapp.com/','weather.png')
 const portfolio = new Project('Portfolio','mosalah001.github.io','portfolio.png')
+const toDoReact = new Project('Portfolio','react-todo-001.netlify.app','todo-react.png')
 
 twitter.desc('Twitter Mock-up project')
 clock.desc("Digital Clock Project")
@@ -59,8 +60,10 @@ tictac.desc("Tic Tac Toe Game")
 landing.desc('Landing Page Project')
 weather.desc('Open Weather Api Project')
 portfolio.desc('Old Portfolio Contains Old Projects')
+toDoReact.desc('Todo project made with React')
 
 addProject(twitter,projects)
+addProject(toDoReact,projects)
 addProject(clock,projects)
 addProject(tictac,projects)
 addProject(landing,projects)
