@@ -6,10 +6,13 @@
 * // general base style
 {
     margin: 0;
-    background-color: black;
     background-repeat: no-repeat;
     background-attachment: scroll;
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
 }
 
 *::-webkit-scrollbar // hide scroll bars while keeping functionality
@@ -33,18 +36,25 @@ a:link , a:visited
     display: flex;
     flex-direction: column;
 
-    
-    & #title // main title style
+    & #header
+    {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        place-content: center;
+        row-gap: 0em;
+
+        & #title // main title style
     {
         color: antiquewhite;
         text-align: center;
-        width: 100vw;
+        width: 100%;
+        height: 100%;
         font-size: 4em;
-        height: 99vh;
-        line-height: 4em;
-        margin: 4vh 0;
+        margin-top: 1.5em;
 
-        & span 
+        & span:first-child
         {
             color: goldenrod;
             text-shadow: 0.8em 0em 0.8em yellow , -0.8em 0em 0.8em red;
@@ -52,11 +62,60 @@ a:link , a:visited
         }
 
         & #name 
-            {
-                font-family: 'aguafina';
-                font-size: 2.4em;
-            }
+        {
+            display: block;
+            font-family: 'aguafina';
+            font-size: 2.4em;
+            margin-top: 1em;
+            max-height: max-content;
+            color: goldenrod;
+            // color: white;
+            text-shadow: 0.8em 0em 0.8em yellow , -0.8em 0em 0.8em red;
+            animation: colorful 3s linear infinite;
+        }
+        #name::before 
+        {
+            content: "";
+            position:absolute;
+            background-image: linear-gradient( yellow , red);
+            top: 4vh;
+            right: 10vw;
+            min-width: 1em;
+            min-height: 1em;
+            border-radius: 50%;
+            animation: colorfulMoon-right 4s linear infinite;
+            z-index: -5;
+            opacity: 0.7;
+        }
+        & #name::after 
+        {
+            content: "";
+            position:absolute;
+            background-image: linear-gradient( crimson , darkblue);
+            bottom: 4vh;
+            left: 10vw;
+            min-width: 1em;
+            min-height: 1em;
+            border-radius: 50%;
+            animation: colorfulMoon-left 4s linear infinite;
+            z-index: -5;
+            opacity: 0.7;
+        }
+
+        & #job 
+        {
+            display: block;
+            color: white;
+            text-shadow: none;
+            animation: none;
+            font-size: 0.6em;
+            max-width: 100%;
+            margin-top: -0.5em;
+        }
     }
+
+    }
+    
     
     & nav // nav menu style
     {
@@ -256,6 +315,7 @@ a:link , a:visited
     }
 }
 
+
 @media only screen and (max-width:600px)
 {
     #contact 
@@ -266,75 +326,87 @@ a:link , a:visited
     #main 
     {
 
-        & #title 
+        & #header 
         {
-            font-size: 2.2em;
-
-            & #name 
+            flex-direction: row;
+            & #title 
             {
-                position: relative;
-                top: 15vh;
                 font-size: 2.2em;
-                left:-0.15em;
-                animation: 'colorful-mob' 2s linear infinite;
-            }
-        }
 
-        & nav 
-        {
-            background-color: transparent;
-            width: 10vw;
 
-            & div 
-            {
-                width: 9vw;
-            }
-            & #burger
-            {
-                & .bar1-dark
+                & #name 
                 {
-                    rotate: 135deg;
-                    transform: translate(1.5em,0.5em);
+                    margin-top: 50%;
+                    font-size: 2.2em;
+                    left:-0.15em;
+                    animation: 'colorful-mob' 2s linear infinite;
                 }
-                
-                & .bar2-dark
+
+                & #job 
                 {
-                    display: none;
+                  display: block;
+                  margin: 0;
+                  font-size: 0.55em;
                 }
-                & .bar3-dark
-                {
-                    rotate: 225deg;
-                    transform: translate(1em , -0.85em);
-                }
+
             }
 
-            & ul
+            & nav 
             {
-                right : 6em;
                 background-color: transparent;
-                width: max-content;
+                width: 10vw;
 
-                & li 
+                & div 
                 {
-                    margin: 2em 0em;
-                    font-size: 0.8em;
+                    width: 9vw;
+                }
+
+                & #burger
+                {
+
+                    & .bar1-dark
+                    {
+                        rotate: 135deg;
+                        transform: translate(1.5em,0.5em);
+                    }
+
+                    & .bar2-dark
+                    {
+                        display: none;
+                    }
+                    & .bar3-dark
+                    {
+                        rotate: 225deg;
+                        transform: translate(1em , -0.85em);
+                    }
+                }
+
+                & ul
+                {
+                    right : 6em;
+                    background-color: transparent;
+                    width: max-content;
+
+                    & li 
+                    {
+                        margin: 2em 0em;
+                        font-size: 0.8em;
+                    }
                 }
             }
         }
-
-        & h2 
+        & h2#project-title 
         {
             font-size: 4em;
-            position: relative;
-            left: 0.22em
         }
 
         & #projects
         {
-            left: 4.5em;
-            width: 81%;
-            max-width: 85%;
             flex-direction: column;
+            place-content: center;
+            left: 0;
+            width: 100vw;
+            background-color: transparent;
 
             & figure 
             {
@@ -378,7 +450,10 @@ a:link , a:visited
         {
             display: flex;
         }
+
     }
+
+        
 
 }
 
@@ -413,5 +488,56 @@ a:link , a:visited
     100%
     {
         text-shadow: 0.8em 0em 0.8em yellow , -0.8em 0em 0.5em red;
+    }
+}
+
+@keyframes colorfulMoon-right
+{
+    0% {
+        top: 4vh;
+        transform: rotateZ(0deg);
+    }
+    
+    25% {
+        top: 8vh;
+        transform: rotateZ(90deg);
+    }
+    50%{
+        top:12vh;
+        transform: rotateZ(180deg);
+    }
+    75%{
+        top: 8vh;
+        transform: rotateZ(270deg);
+    }
+
+    100% {
+        top: 4vh;
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes colorfulMoon-left {
+    0% {
+        bottom: 4vh;
+        transform: rotateZ(360deg);
+    }
+    
+    25% {
+        bottom: 8vh;
+        transform: rotateZ(270deg);
+    }
+    50%{
+        bottom:12vh;
+        transform: rotateZ(180deg);
+    }
+    75%{
+        bottom: 8vh;
+        transform: rotateZ(90deg);
+    }
+
+    100% {
+        bottom: 4vh;
+        transform: rotateZ(0deg);
     }
 }

@@ -4,10 +4,13 @@
 }
 * {
   margin: 0;
-  background-color: black;
   background-repeat: no-repeat;
   background-attachment: scroll;
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
 }
 
 *::-webkit-scrollbar {
@@ -28,24 +31,78 @@ a:link, a:visited {
   display: flex;
   flex-direction: column;
 }
-#main #title {
+#main #header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  row-gap: 0em;
+}
+#main #header #title {
   color: antiquewhite;
   text-align: center;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   font-size: 4em;
-  height: 99vh;
-  line-height: 4em;
-  margin: 4vh 0;
+  margin-top: 1.5em;
 }
-#main #title span {
+#main #header #title span:first-child {
   color: goldenrod;
   text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
   -webkit-animation: colorful 3s linear infinite;
           animation: colorful 3s linear infinite;
 }
-#main #title #name {
+#main #header #title #name {
+  display: block;
   font-family: "aguafina";
   font-size: 2.4em;
+  margin-top: 1em;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  color: goldenrod;
+  text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.8em red;
+  -webkit-animation: colorful 3s linear infinite;
+          animation: colorful 3s linear infinite;
+}
+#main #header #title #name::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(yellow, red);
+  top: 4vh;
+  right: 10vw;
+  min-width: 1em;
+  min-height: 1em;
+  border-radius: 50%;
+  -webkit-animation: colorfulMoon-right 4s linear infinite;
+          animation: colorfulMoon-right 4s linear infinite;
+  z-index: -5;
+  opacity: 0.7;
+}
+#main #header #title #name::after {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(crimson, darkblue);
+  bottom: 4vh;
+  left: 10vw;
+  min-width: 1em;
+  min-height: 1em;
+  border-radius: 50%;
+  -webkit-animation: colorfulMoon-left 4s linear infinite;
+          animation: colorfulMoon-left 4s linear infinite;
+  z-index: -5;
+  opacity: 0.7;
+}
+#main #header #title #job {
+  display: block;
+  color: white;
+  text-shadow: none;
+  -webkit-animation: none;
+          animation: none;
+  font-size: 0.6em;
+  max-width: 100%;
+  margin-top: -0.5em;
 }
 #main nav {
   background-color: transparent;
@@ -203,56 +260,62 @@ a:link, a:visited {
   #contact {
     display: none;
   }
-  #main #title {
+  #main #header {
+    flex-direction: row;
+  }
+  #main #header #title {
     font-size: 2.2em;
   }
-  #main #title #name {
-    position: relative;
-    top: 15vh;
+  #main #header #title #name {
+    margin-top: 50%;
     font-size: 2.2em;
     left: -0.15em;
     -webkit-animation: "colorful-mob" 2s linear infinite;
             animation: "colorful-mob" 2s linear infinite;
   }
-  #main nav {
+  #main #header #title #job {
+    display: block;
+    margin: 0;
+    font-size: 0.55em;
+  }
+  #main #header nav {
     background-color: transparent;
     width: 10vw;
   }
-  #main nav div {
+  #main #header nav div {
     width: 9vw;
   }
-  #main nav #burger .bar1-dark {
+  #main #header nav #burger .bar1-dark {
     rotate: 135deg;
     transform: translate(1.5em, 0.5em);
   }
-  #main nav #burger .bar2-dark {
+  #main #header nav #burger .bar2-dark {
     display: none;
   }
-  #main nav #burger .bar3-dark {
+  #main #header nav #burger .bar3-dark {
     rotate: 225deg;
     transform: translate(1em, -0.85em);
   }
-  #main nav ul {
+  #main #header nav ul {
     right: 6em;
     background-color: transparent;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }
-  #main nav ul li {
+  #main #header nav ul li {
     margin: 2em 0em;
     font-size: 0.8em;
   }
-  #main h2 {
+  #main h2#project-title {
     font-size: 4em;
-    position: relative;
-    left: 0.22em;
   }
   #main #projects {
-    left: 4.5em;
-    width: 81%;
-    max-width: 85%;
     flex-direction: column;
+    place-content: center;
+    left: 0;
+    width: 100vw;
+    background-color: transparent;
   }
   #main #projects figure {
     width: 65vw;
@@ -332,5 +395,93 @@ a:link, a:visited {
   }
   100% {
     text-shadow: 0.8em 0em 0.8em yellow, -0.8em 0em 0.5em red;
+  }
+}
+@-webkit-keyframes colorfulMoon-right {
+  0% {
+    top: 4vh;
+    transform: rotateZ(0deg);
+  }
+  25% {
+    top: 8vh;
+    transform: rotateZ(90deg);
+  }
+  50% {
+    top: 12vh;
+    transform: rotateZ(180deg);
+  }
+  75% {
+    top: 8vh;
+    transform: rotateZ(270deg);
+  }
+  100% {
+    top: 4vh;
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes colorfulMoon-right {
+  0% {
+    top: 4vh;
+    transform: rotateZ(0deg);
+  }
+  25% {
+    top: 8vh;
+    transform: rotateZ(90deg);
+  }
+  50% {
+    top: 12vh;
+    transform: rotateZ(180deg);
+  }
+  75% {
+    top: 8vh;
+    transform: rotateZ(270deg);
+  }
+  100% {
+    top: 4vh;
+    transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes colorfulMoon-left {
+  0% {
+    bottom: 4vh;
+    transform: rotateZ(360deg);
+  }
+  25% {
+    bottom: 8vh;
+    transform: rotateZ(270deg);
+  }
+  50% {
+    bottom: 12vh;
+    transform: rotateZ(180deg);
+  }
+  75% {
+    bottom: 8vh;
+    transform: rotateZ(90deg);
+  }
+  100% {
+    bottom: 4vh;
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes colorfulMoon-left {
+  0% {
+    bottom: 4vh;
+    transform: rotateZ(360deg);
+  }
+  25% {
+    bottom: 8vh;
+    transform: rotateZ(270deg);
+  }
+  50% {
+    bottom: 12vh;
+    transform: rotateZ(180deg);
+  }
+  75% {
+    bottom: 8vh;
+    transform: rotateZ(90deg);
+  }
+  100% {
+    bottom: 4vh;
+    transform: rotateZ(0deg);
   }
 }/*# sourceMappingURL=main.css.map */

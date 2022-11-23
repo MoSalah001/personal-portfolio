@@ -1,8 +1,11 @@
 import Item , {linkItem as link , addEvent as listner , select , Project , addProject , contactList} from "./elements.mjs";
 const app = document.getElementById('main')
 
-const title = new Item('h1',"title",`Hello,\nI<span>'</span>m \n <br /> <span id=\"name\">Mohamed</span>`)
-link(title,app)
+const header = new Item('div','header')
+
+const title = new Item('h1','title',`Hello,\nI<span>'</span>m \n <br /> <span id=\"name\">Mohamed</span><br /><span id=\"job\">Full-Stack Web Developer And Accountant</span>`)
+link(header,app)
+link(title,header)
 /***   nav menu items   ****/ 
 const nav = new Item('nav','nav-menu')
 const navUl = new Item('ul','nav-ul')
@@ -13,7 +16,7 @@ const bar3 = new Item('div','bar3')
 const projectLi = new Item('li','project',"<a href=#projects>Projects</a>",'show-menu')
 const aboutLi = new Item('li','about-me',"<a href=#about>About Me</a>",'show-menu')
 
-link(nav,app)
+link(nav,header)
 link(burger,nav)
 link(bar1,burger)
 link(bar2,burger)
