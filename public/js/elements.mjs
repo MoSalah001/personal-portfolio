@@ -83,6 +83,7 @@ export function contactList(arr)
            link.setAttribute('target','_blank');
            logo.setAttribute('src',`./public/css/icons/${element.name}.png`);
            logo.setAttribute('id',element.name);
+           logo.setAttribute('alt',element.name);
            link.appendChild(logo);
            parent.appendChild(link);
         })
