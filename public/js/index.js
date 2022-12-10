@@ -53,7 +53,7 @@ const twitter = new Project('Twitter-Clone','twitterclone.cyclic.app','twitter-c
 const clock = new Project('Digital-Clock','mosalah001.github.io/Digital-Clock/','Digital-Clock.png')
 const tictac = new Project('Tic-Tac-Toe','mosalah001.github.io/Tic-Tac-Toe/','tictac.png')
 const landing = new Project('Landing-Page','mosalah001.github.io/landing-page/','Land.png')
-const weather = new Project('Weather-Project','openweather-app-demo.herokuapp.com/','weather.png')
+const weather = new Project('Weather-Project','weatherjournal.cyclic.app/','weather.png')
 const portfolio = new Project('Portfolio','mosalah001.github.io','portfolio.png')
 const toDoReact = new Project('Portfolio','react-todo-001.netlify.app','todo-react.png')
 
