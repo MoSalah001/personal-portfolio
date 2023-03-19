@@ -168,8 +168,7 @@ a:link, a:visited {
 #main #projects {
   position: relative;
   left: 5em;
-  margin: 1em 0em;
-  max-width: 94%;
+  margin: 1em 7em 1em 1em;
   display: flex;
   flex-direction: row;
   place-content: flex-start;
