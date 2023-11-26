@@ -5,4 +5,4 @@
 - used SCSS to style the site.
 - projects thumbnails was made in photoshop by me.
 
-# Preview Link : [here](https://mosalah001.netlify.app/)
+# Preview Link : [here](https://devmosalah.com/)
