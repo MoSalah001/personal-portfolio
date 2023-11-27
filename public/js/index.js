@@ -3,7 +3,7 @@ const app = document.getElementById('main')
 
 const header = new Item('div','header')
 
-const title = new Item('h1','title',`Hello,\nI<span>'</span>m \n <br /> <span id=\"name\">Mohamed</span><br /><span id=\"job\">Full-Stack Web Developer and enthusiastic 3D Designer</span>`)
+const title = new Item('h1','title',`Hello,\nI<span>'</span>m \n <br /> <span id=\"name\">Mohamed</span><br /><span id=\"job\">Full-Stack Web Developer and enthusiastic 3D Creator</span>`)
 link(header,app)
 link(title,header)
 /***   nav menu items   ****/ 
