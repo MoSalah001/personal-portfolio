@@ -55,7 +55,8 @@ const tictac = new Project('Tic-Tac-Toe','mosalah001.github.io/Tic-Tac-Toe/','ti
 const landing = new Project('Landing-Page','mosalah001.github.io/landing-page/','Land.png')
 const weather = new Project('Weather-Project','weatherjournal.cyclic.app/','weather.png')
 const portfolio = new Project('Portfolio','mosalah001.github.io','portfolio.png')
-const toDoReact = new Project('Portfolio','react-todo-001.netlify.app','todo-react.png')
+const toDoReact = new Project('to-do-app','react-todo-001.netlify.app','todo-react.png')
+const imgResizer = new Project('image-resizer-app','imgresize.devmosalah.com','img-resize.png')
 
 twitter.desc('Twitter Mock-up project')
 clock.desc("Digital Clock Project")
@@ -64,7 +65,10 @@ landing.desc('Landing Page Project')
 weather.desc('Open Weather Api Project')
 portfolio.desc('Old Portfolio Contains Old Projects')
 toDoReact.desc('Todo project made with React')
+imgResizer.desc('An Image Resizer And Compression App')
 
+
+addProject(imgResizer,projects)
 addProject(twitter,projects)
 addProject(toDoReact,projects)
 addProject(clock,projects)
@@ -72,6 +76,7 @@ addProject(tictac,projects)
 addProject(landing,projects)
 addProject(weather,projects)
 addProject(portfolio,projects)
+
 
 /*** End of projects ***/
 
